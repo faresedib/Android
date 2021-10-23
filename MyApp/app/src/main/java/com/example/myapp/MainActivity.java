@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
 
-        TextView mitexto=new TextView(this)//El pasamos el mainActivity
+        TextView mitexto=new TextView(this);//El pasamos el mainActivity
         mitexto.setText("Hola gente");
         setContentView(mitexto);//Vista
     }
