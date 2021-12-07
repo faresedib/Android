@@ -28,7 +28,7 @@
         android:background="#FFFF00"
         android:gravity="center"
         android:text="@string/num"
-        android:textSize="160sp"
+        android:textSize="120sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/button_count"
         app:layout_constraintStart_toStartOf="parent"
