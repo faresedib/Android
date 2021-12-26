@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">IntentsActivities</string>
+    <string name="button_main">Enviar</string>
+    <string name="message_received">Mensaje Recibido</string>
+    <string name="message">Introduce tu mensaje aquí</string>
+    <string name="reply">Introduce la respuesta aquí</string>
+    <string name="button_reply">Responder</string>
+    <string name="reply_received">Respuesta Recibida</string>
+</resources>
