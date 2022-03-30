@@ -12,10 +12,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val roll_button : Button = findViewById(R.id.roll_button)
+        val roll_button: Button = findViewById(R.id.roll_button)
         roll_button.setOnClickListener { rollDice() }
 
-        val count_button : Button = findViewById(R.id.countUp_button)
+        val count_button: Button = findViewById(R.id.countUp_button)
         count_button.setOnClickListener { countUp() }
     }
 
@@ -28,12 +28,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun countUp() {
         val resultText: TextView = findViewById(R.id.result_text)
-        var count_up = resultText.text.toString().toInt()
 
-        if (resultText.text.equals("Hello World!")) {
+        if (resultText.text == "Hello World!") {
             resultText.text = "1"
         } else {
-            if(count_up < 6)count_up++
+            var count_up = resultText.text.toString().toInt()
+            if (count_up < 6) count_up++
             resultText.text = count_up.toString()
         }
 
