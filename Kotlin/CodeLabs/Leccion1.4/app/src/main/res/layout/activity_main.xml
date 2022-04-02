@@ -11,6 +11,8 @@
         android:layout_height="wrap_content"
         android:theme="@style/Theme.MyApplication.AppBarOverlay">
 
+            <!-- El atributo ?attr/colorPrimaryDark
+                permite que el toolbar tenga el mismo color que el statusBar  -->
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
