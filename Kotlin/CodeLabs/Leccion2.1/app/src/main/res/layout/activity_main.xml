@@ -10,7 +10,7 @@
     tools:context=".MainActivity">
 
     <!--
-    El appespacio de nombres es para atributos
+    El app espacio de nombres es para atributos
     que provienen de su código personalizado o de bibliotecas
     y no del marco de trabajo principal de Android.
 
@@ -27,6 +27,37 @@
         android:text="@string/name"
         android:textAlignment="center" />
 
+    <EditText
+        android:id="@+id/nickname_edit"
+        style="@style/NameStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/what_is_your_nickname"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        tools:ignore="Autofill,LabelFor" />
+
+    <Button
+        android:id="@+id/done_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/layout_margin"
+        android:fontFamily="@font/roboto"
+        android:text="@string/done" />
+
+    <TextView
+        android:id="@+id/nickname_text"
+        style="@style/NameStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorAccent"
+        android:paddingBottom="@dimen/small_padding"
+        android:text=""
+        android:textAlignment="center"
+        android:visibility="gone" />
+
     <ImageView
         android:id="@+id/star_image"
         android:layout_width="match_parent"
@@ -36,6 +67,7 @@
         app:srcCompat="@android:drawable/btn_star_big_on"
         tools:ignore="ImageContrastCheck" />
 
+
     <ScrollView
         android:id="@+id/bio_scroll"
         android:layout_width="match_parent"
@@ -44,13 +76,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 app:srcCompat="@drawable/imagen"
-                tools:ignore="ImageContrastCheck, contentDescription"/>
+                tools:ignore="ImageContrastCheck, contentDescription" />
 
             <TextView
                 android:id="@+id/bio_text"
