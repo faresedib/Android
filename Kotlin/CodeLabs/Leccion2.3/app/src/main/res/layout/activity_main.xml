@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+@CONSTRAINT
+Una restricción es una conexión o alineación entre dos elementos de la interfaz
+de usuario.Cada restricción conecta o alinea una vista con otra vista,
+con el diseño principal o con una guía invisible. En un ConstraintLayout,
+coloca una vista definiendo al menos una restricción horizontal y una vertical.
+
+@CONSTRAINT BIAS
+El sesgo de restricción coloca el elemento de vista a lo largo de los
+ejes horizontal y vertical. De forma predeterminada, la vista se centra
+entre las dos restricciones con un sesgo del 50 %. Esto es lo que hace que en
+un programa el hello esté en el centro por defecto.
+
+TIPOS DE RESTRICCIÓN
+    >>> Ajustar contenido : la vista se expande solo lo necesario para contener
+    su contenido.
+
+    Fijo : puede especificar una dimensión como margen de vista
+    en el cuadro de texto junto a las flechas de restricción fija.
+
+Hacer coincidir las restricciones : la vista se expande tanto
+como sea posible para cumplir con las restricciones de cada lado,
+después de tener en cuenta los propios márgenes de la vista.
+Esta restricción es muy flexible, porque permite que el diseño
+se adapte a diferentes tamaños y orientaciones de pantalla.
+
+@CHAINS
+Una cadena es un grupo de vistas que están vinculadas entre sí con
+restricciones bidireccionales. Las vistas dentro de una cadena se pueden
+distribuir tanto vertical como horizontalmente.
+
+Estilos de Cadena
+
+* Spread: este es el estilo predeterminado. Las vistas se distribuyen
+  uniformemente en el espacio disponible, después de tener en cuenta los márgenes.
+
+* Spread Inside: la primera y la última vista se adjuntan al padre
+  en cada extremo de la cadena. El resto de las vistas se distribuyen
+  uniformemente en el espacio disponible.
+
+* Packed: las vistas se empaquetan juntas, después de tener
+  en cuenta los márgenes. Luego puede ajustar la posición de toda
+  la cadena cambiando el sesgo de la vista de la cabeza de la cadena.
+
+* Weighted: las vistas se redimensionan para llenar todo_el espacio,
+  en función de los valores establecidos en los atributos
+  layout_constraintHorizontal_weighto .
+  layout_constraintVertical_weight
+  Por ejemplo, imagine una cadena que contiene tres vistas, A, B y C.
+  La vista A usa un peso de 1. Las vistas B y C usan cada una un peso de 2.
+  El espacio ocupado por las vistas B y C es el doble que el de la vista A.
+
+Para agregar un estilo de cadena a una cadena, establezca el
+layout_constraintHorizontal_chainStyle o el
+layout_constraintVertical_chainStyleatributo para la cabeza de la cadena.
+
+
+-->
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/box_one_text"
+        style="@style/whiteBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="@dimen/margin_wide"
+        android:layout_marginRight="16dp"
+        android:text="@string/box_one"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/box_two_text"
+        style="@style/whiteBox"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/box_two"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/box_one_text" />
+
+    <TextView
+        android:id="@+id/box_three_text"
+        style="@style/whiteBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_wide"
+        android:layout_marginEnd="@dimen/margin_wide"
+        android:text="@string/box_three"
+        app:layout_constraintBottom_toTopOf="@+id/box_four_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/box_two_text"
+        app:layout_constraintTop_toTopOf="@+id/box_two_text" />
+
+    <TextView
+        android:id="@+id/box_four_text"
+        style="@style/whiteBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_wide"
+        android:text="@string/box_four"
+        app:layout_constraintBottom_toTopOf="@+id/box_five_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/box_two_text"
+        app:layout_constraintTop_toBottomOf="@+id/box_three_text" />
+
+    <TextView
+        android:id="@+id/box_five_text"
+        style="@style/whiteBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_wide"
+        android:layout_marginEnd="@dimen/margin_wide"
+        android:text="@string/box_four"
+        app:layout_constraintBottom_toBottomOf="@+id/box_two_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/box_two_text"
+        app:layout_constraintTop_toBottomOf="@+id/box_four_text" />
+
+</android.support.constraint.ConstraintLayout>
