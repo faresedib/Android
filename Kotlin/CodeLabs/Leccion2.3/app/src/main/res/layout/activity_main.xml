@@ -56,9 +56,9 @@ Para agregar un estilo de cadena a una cadena, establezca el
 layout_constraintHorizontal_chainStyle o el
 layout_constraintVertical_chainStyleatributo para la cabeza de la cadena.
 
-
 -->
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraint_layout"
@@ -74,7 +74,7 @@ layout_constraintVertical_chainStyleatributo para la cabeza de la cadena.
         android:layout_marginLeft="16dp"
         android:layout_marginTop="@dimen/margin_wide"
         android:layout_marginRight="16dp"
-        android:text="@string/box_one"
+        android:text=""
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -86,7 +86,7 @@ layout_constraintVertical_chainStyleatributo para la cabeza de la cadena.
         android:layout_height="130dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="@string/box_two"
+        android:text=""
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/box_one_text" />
 
@@ -97,7 +97,7 @@ layout_constraintVertical_chainStyleatributo para la cabeza de la cadena.
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_wide"
         android:layout_marginEnd="@dimen/margin_wide"
-        android:text="@string/box_three"
+        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/box_four_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/box_two_text"
@@ -109,7 +109,7 @@ layout_constraintVertical_chainStyleatributo para la cabeza de la cadena.
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_wide"
-        android:text="@string/box_four"
+        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/box_five_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/box_two_text"
@@ -122,7 +122,7 @@ layout_constraintVertical_chainStyleatributo para la cabeza de la cadena.
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_wide"
         android:layout_marginEnd="@dimen/margin_wide"
-        android:text="@string/box_four"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="@+id/box_two_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/box_two_text"
