@@ -11,35 +11,30 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setListeners()
+        //setListeners()
 
     }
 
     //Cambiamos el color de las BoxTextView
-    private fun makeColored(view: View) {
-        when (view.id) {
+     fun makeColored(view: View) {
+        when ((1..8).random()) {
 
             // Boxes using Color class colors for the background
-            R.id.box_one_text -> view.setBackgroundColor(Color.DKGRAY)
-            R.id.box_two_text -> view.setBackgroundColor(Color.GRAY)
-            R.id.box_three_text -> view.setBackgroundResource(R.drawable.image_one)
-            R.id.box_four_text -> view.setBackgroundColor(Color.MAGENTA)
-            R.id.box_five_text -> view.setBackgroundColor(Color.BLUE)
+            1 -> view.setBackgroundColor(Color.DKGRAY)
+            2 -> view.setBackgroundColor(Color.GRAY)
+            3 -> view.setBackgroundResource(R.drawable.image_one)
+            4 -> view.setBackgroundColor(Color.MAGENTA)
+            5 -> view.setBackgroundColor(Color.BLUE)
 
-            R.id.red_button -> findViewById<TextView>(
-                R.id.box_three_text).setBackgroundResource(R.color.my_red)
-
-            R.id.yellow_button -> findViewById<TextView>(
-                R.id.box_four_text).setBackgroundResource(R.color.my_yellow)
-
-            R.id.green_button -> findViewById<TextView>(
-                R.id.box_five_text).setBackgroundResource(R.color.my_green)
+            6 -> view.setBackgroundResource(R.color.my_red)
+            7 -> view.setBackgroundResource(R.color.my_yellow)
+            8 -> view.setBackgroundResource(R.color.my_green)
 
             else -> view.setBackgroundColor(Color.LTGRAY)
         }
     }
 
-    private fun setListeners() {//Establecemos los oyentes de cada vista
+    /*private fun setListeners() {//Establecemos los oyentes de cada vista
 
         //Obtenemos cada una de las vistas incluido el layout padre
         val boxOneText = findViewById<TextView>(R.id.box_one_text)
@@ -56,13 +51,12 @@ class MainActivity : AppCompatActivity() {
         val clickableViews: List<View> =
             listOf(
                 boxOneText, boxTwoText, boxThreeText,
-                boxFourText, boxFiveText, rootConstraintLayout,
-                redButton,yellowButton,greenButton
+                boxFourText, boxFiveText, rootConstraintLayout
             )
 
         //Establecemos el oyente a cada vista a partir de makeColored()
         for (item in clickableViews) {
             item.setOnClickListener { makeColored(it) }
         }
-    }
+    }*/
 }
