@@ -43,15 +43,15 @@ class TitleFragment : Fragment() {
                 R.layout.fragment_title,container,false)
 
         binding.playButton.setOnClickListener {
-            it.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
+            it.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment())
         }
 
         binding.rulesButton.setOnClickListener {
-            it.findNavController().navigate(R.id.action_titleFragment_to_rulesFragment)
+            it.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToRulesFragment())
         }
 
         binding.aboutButton.setOnClickListener {
-            it.findNavController().navigate(R.id.action_titleFragment_to_aboutFragment)
+            it.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToAboutFragment())
         }
 
         setHasOptionsMenu(true)
