@@ -1,0 +1,11 @@
+VIEWMODEL
+Se encarga de mantener todos los datos necesarios para la UI y los prepara para que sean mostrados
+por este. El resumen se encarga de la administración de los datos.
+
+-Para implementar viewModel es nesario implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+
+-A ViewModel debe estar asociado con un controlador de interfaz de usuario. Para asociar los dos,
+crea una referencia del ViewModel en el interior del controlador de la interfaz de usuario.
+
+-El ViewModelnunca debe contener referencias a fragmentos, actividades o vistas,
+porque las actividades, los fragmentos y las vistas no sobreviven a los cambios de configuración.
