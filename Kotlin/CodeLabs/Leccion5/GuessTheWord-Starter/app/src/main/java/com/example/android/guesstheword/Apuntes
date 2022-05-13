@@ -7,5 +7,30 @@ por este. El resumen se encarga de la administración de los datos.
 -A ViewModel debe estar asociado con un controlador de interfaz de usuario. Para asociar los dos,
 crea una referencia del ViewModel en el interior del controlador de la interfaz de usuario.
 
--El ViewModelnunca debe contener referencias a fragmentos, actividades o vistas,
+-El ViewModel nunca debe contener referencias a fragmentos, actividades o vistas,
 porque las actividades, los fragmentos y las vistas no sobreviven a los cambios de configuración.
+
+
+LIVEDATA
+- LiveData es una clase de titular de datos observable que tiene en cuenta el ciclo de vida,
+y es uno de los componentes de la arquitectura de Android
+
+- Puede usar LiveDatapara permitir que su interfaz de usuario se actualice automáticamente
+cuando se actualicen los datos.
+
+- LiveData es observable, lo que significa que un observador, como una actividad o un fragmento,
+ puede recibir una notificación cuando cambien los datos del objeto LiveData.
+
+- LiveData contiene datos; es un contenedor que se puede utilizar con cualquier dato.
+
+- LiveData es consciente del ciclo de vida, lo que significa que solo actualiza los observadores
+ que están en un estado de ciclo de vida activo, como STARTED o RESUMED.
+
+- Para agregar LiveData, cambie las variables del viewModel a LiveData o MutableLiveData
+
+-MutableLiveDataes un LiveDataobjeto cuyo valor se puede cambiar. MutableLiveData es
+una clase genérica, por lo que debe especificar el tipo de datos que contiene.
+
+- Los objetos LiveData no deben ser modificados por otras clases por eso utilizamos MutableLiveData
+internamente en la clase del viewModel y una variable liveData get() para poder acceder desde otra
+clase.
