@@ -1,0 +1,33 @@
+
+A continuación se detallan los pasos a seguir al crear la app:
+
+1. Añadimos las siguientes dependencias
+    //Navigation
+        implementation 'androidx.navigation:navigation-fragment-ktx:2.4.2'
+        implementation 'androidx.navigation:navigation-ui-ktx:2.4.2'
+
+        //Circle Imageview
+        implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+        //Glide para las imágenes
+        implementation 'com.github.bumptech.glide:glide:4.13.1'
+        annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+        //ViewModel y LiveData
+        implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+        implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+
+        //Para utilizar corutinas con firebase y poder utilizar await en lugar de un listener
+        implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.1.1'
+
+2. Configuramos Firebase
+
+3. Creamos la arquitectura con sus respectivos paquetes data, core, domain, presentation and ui.
+
+4. Creamos la carpeta de navegación de los fragment.
+
+5. En el activity_main creamos el fragmentContainer y le asignamos la propiedades del navHost
+
+6. Creamos el modelo
+    -Creamos un nuevo paquete en data llamado model
+    -Creamos un data class Order en cual se almacenará cada tipo de pedido, donut, tarta, croissant
