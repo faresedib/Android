@@ -1,0 +1,24 @@
+
+Pasos para trabajar con Room
+
+Para trabajar con Room tenemos que seguir los siguientes pasos:
+
+1. Primero debemos importar las librerías necesarias.
+
+2. Crear una data class que será la Entidad algo así como la tabla de una base de datos.
+    -Esta clase tendrá la anotación @entity(tableName = nombre de la tabla).
+    -La primaryKey tendrá la anotación @PrimaryKey y el resto de columnas @ColumnInfo
+
+3. Creamos una interfaz con la anotación @DAO de Data Access Object.
+    -El Dao implementará las sentencias que hacermos en la base de datos.
+    -Las sentencias tendrán las anotaciones @Insert, @Update, @Delete, y el resto @Query
+
+4. Creamos una abstract class con la anotación @Database(entities,version,etc.) y que hereda de RoomDatabase.
+    -Creamos un abstrac val del tipo de Objeto del DAO correspondiente.
+    -Creamos un companion object en el cual trabajaremos la instancia de la base de datos.
+    -Creamos un var INSTANCE de la clase abstracta pero nulable.
+    -Creamos un método getInstance con el cuál crearemos una instancia de la BD que reciba
+    un context y devuelva una BD.
+    -Introducimos to-do el cuerpo del método en un syncronized para que ningún otro hilo pueda
+    acceder y así evitamos tener varias instancias de la misma BD.
+    -

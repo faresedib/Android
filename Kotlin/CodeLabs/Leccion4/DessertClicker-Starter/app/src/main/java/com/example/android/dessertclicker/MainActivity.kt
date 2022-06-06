@@ -18,6 +18,7 @@ package com.example.android.dessertclicker
 
 import android.app.Notification
 import android.content.ActivityNotFoundException
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -186,6 +187,7 @@ class MainActivity : AppCompatActivity() {
                 .setText(getString(R.string.share_text, dessertsSold, revenue))
                 .setType("text/plain")
                 .intent
+
         try {
             startActivity(shareIntent)
         } catch (ex: ActivityNotFoundException) {

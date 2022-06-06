@@ -1,6 +1,6 @@
 package com.example.dreamcake.data.model
 
-data class Order(
+data class Product(
     val name: String = "",
     var price: Double = 0.00,
     val description: String = "",

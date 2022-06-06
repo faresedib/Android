@@ -30,4 +30,4 @@ A continuación se detallan los pasos a seguir al crear la app:
 
 6. Creamos el modelo
     -Creamos un nuevo paquete en data llamado model
-    -Creamos un data class Order en cual se almacenará cada tipo de pedido, donut, tarta, croissant
+    -Creamos un data class Order en cual se almacenará cada tipo de producto, donut, tarta, croissant
