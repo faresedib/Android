@@ -21,4 +21,34 @@ Para trabajar con Room tenemos que seguir los siguientes pasos:
     un context y devuelva una BD.
     -Introducimos to-do el cuerpo del método en un syncronized para que ningún otro hilo pueda
     acceder y así evitamos tener varias instancias de la misma BD.
-    -
+
+
+ APUNTES DE CORUTINAS EN KOTLIN
+ Para trabajar con corutinas en kotlin necesitamos los siguiente:
+
+ -Importar las librerías para trabajar con viewModelScope, LifecycleScope y liveData.
+
+ -Un Job: Básicamente, un trabajo es cualquier cosa que se pueda cancelar. Cada rutina tiene un trabajo,
+  y puede usar el trabajo para cancelar la rutina. Los trabajos se pueden organizar en jerarquías padre-hijo.
+  Cancelar un trabajo principal cancela inmediatamente todos los trabajos secundarios del trabajo,
+  lo cual es mucho más conveniente que cancelar cada rutina manualmente.
+
+ -Un Dispatcher:El despachador envía corrutinas para ejecutarse en varios subprocesos.
+ Por ejemplo, Dispatchers.Main ejecuta tareas en el subproceso principal y Dispatchers.IO descarga
+ las tareas de E/S de bloqueo en un grupo compartido de subprocesos.
+
+ -Un Scope:el scope de una corrutina define el contexto en el que se ejecuta la corrutina.
+ Un scope combina información sobre el trabajo de una corrutina y los despachadores.
+ Los scope realizan un seguimiento de las corrutinas. Cuando inicia una corrutina,
+ está "en un ámbito", lo que significa que ha indicado qué ámbito realizará un seguimiento de la corrutina.
+
+
+ ViewModelScope
+ Un ViewModelScope se define para cada ViewModel en su aplicación.
+ Cualquier rutina lanzada en este scope se cancela automáticamente si ViewModel se borra.
+ En este codelab se usará ViewModelScopepara iniciar las operaciones de la base de datos
+
+ Room y Dispatchers
+ Cuando se usa la biblioteca Room para realizar una operación de base de datos, Room usa Dispatchers.IO
+ para realizar las operaciones de base de datos en un subproceso en segundo plano.
+ No tienes que especificar explícitamente ninguno Dispatchers. Room hace esto por ti.

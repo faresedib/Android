@@ -28,22 +28,21 @@ abstract class SleepDatabase : RoomDatabase() {
 
     companion object {
 
-        @Volatile//Significa que no se almacenará en caché
+        @Volatile
         private var INSTANCE: SleepDatabase? = null
 
         fun getInstance(context: Context): SleepDatabase {
             synchronized(this) {
                 var instance = INSTANCE
 
-                if (instance == null) {//Si instance es null creamos una instancia de la BD
+                if (instance == null) {
                     instance = Room.databaseBuilder(
-                        context.applicationContext,
-                        SleepDatabase::class.java,
-                        "sleep_history_database"
-
-                    ).fallbackToDestructiveMigration()
-                        .build()
-
+                            context.applicationContext,
+                            SleepDatabase::class.java,
+                            "sleep_history_database"
+                    )
+                            .fallbackToDestructiveMigration()
+                            .build()
                     INSTANCE = instance
                 }
                 return instance
