@@ -17,18 +17,12 @@
 package com.example.android.trackmysleepquality.sleeptracker
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.android.trackmysleepquality.database.SleepDatabaseDao
 import com.example.android.trackmysleepquality.database.SleepNight
 import com.example.android.trackmysleepquality.formatNights
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 /**
  * ViewModel for SleepTrackerFragment.
@@ -37,19 +31,14 @@ class SleepTrackerViewModel(
         val database: SleepDatabaseDao,
         application: Application) : AndroidViewModel(application) {
 
-    private val nights = database.getAllNights()
-
-    val nightsString = Transformations.map(nights) { nights ->
-        formatNights(nights, application.resources)
-    }
-
+    //Esta variable almacena la noche más reciente
     private var tonight = MutableLiveData<SleepNight?>()
 
     init {
         initializeTonight()
     }
 
-    private fun initializeTonight() {
+    private fun initializeTonight() {//En esta función lanzamos la corutina para obtener la noche más reciente
         viewModelScope.launch {
             tonight.value = getTonightFromDatabase()
         }
@@ -63,6 +52,7 @@ class SleepTrackerViewModel(
         return night
     }
 
+    //A partir de aquí implementamos el controlador/contoller de clicks del boton/button de inicio/start
     fun onStartTracking() {
         viewModelScope.launch {
             val newNight = SleepNight()
@@ -75,11 +65,14 @@ class SleepTrackerViewModel(
         database.insert(night)
     }
 
+
+    //A partir de aquí empezamos a implementar the button finish clicks controller
     fun onStopTracking() {
         viewModelScope.launch {
             val oldNight = tonight.value ?: return@launch
             oldNight.endTimeMilli = System.currentTimeMillis()
             update(oldNight)
+            _navigateToSleepQuality.value = oldNight //Activamos la navegación a SleepQualityFragment
         }
     }
 
@@ -87,15 +80,56 @@ class SleepTrackerViewModel(
         database.update(night)
     }
 
+    private val nights = database.getAllNights()
+
+    //Transformamos la información a formato HTML
+    val nightsString = Transformations.map(nights) { nights ->
+        formatNights(nights, application.resources)
+    }
+
+
+    //Now, we implement button clear click handler
     fun onClear() {
         viewModelScope.launch {
             clear()
             tonight.value = null
+            _showSnackbarEvent.value = true
         }
     }
 
-    suspend fun clear() {
+    private suspend fun clear() {
         database.clear()
+    }
+
+    //Now, we make that navigate to SleepQuality
+    private val _navigateToSleepQuality = MutableLiveData<SleepNight?>()
+
+    val navigateToSleepQuality: MutableLiveData<SleepNight?>
+        get() = _navigateToSleepQuality
+
+    fun doneNavigating() {//Esta función restablece la variable que activa la navegación
+        _navigateToSleepQuality.value = null
+    }
+
+    //A continuación comprobamos que los botones se activen o desactiven
+    val startButtonVisible = Transformations.map(tonight) {
+        it == null
+    }
+    val stopButtonVisible = Transformations.map(tonight) {
+        it != null
+    }
+    val clearButtonVisible = Transformations.map(nights) {
+        it?.isNotEmpty()
+    }
+
+    //A continuación trabajamos el SnackBar
+    private var _showSnackbarEvent = MutableLiveData<Boolean>()
+
+    val showSnackBarEvent: LiveData<Boolean>
+        get() = _showSnackbarEvent
+
+    fun doneShowingSnackbar() {
+        _showSnackbarEvent.value = false
     }
 }
 
