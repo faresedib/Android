@@ -1,0 +1,18 @@
+
+RECYCLERVIEW
+Para trabajar con un RecyclerView se necesita lo siguiente:
+-Los datos a mostrar
+
+-Una instancia de RecyclerView en el archivo de diseño
+
+-Un diseño que representará cada uno de los elementos individuales del RecyclerView si to-dos
+los elementos de la lista son iguales.Este diseño debe crearse separado del fragmento
+
+-Un layout manager que maneja la organización de los componentes, LinearLayout,etc.
+
+-Un viewHolder(titular de vista) que herede de viewHolder contiene la información de la vista que
+se va a mostrar. También agregan información que RecyclerView utiliza para mover las vistas de forma
+eficiente.
+
+-Un Adapter que conecta los datos al RecyclerView y adapta los datos para que se puedan mostrar en un
+archivo ViewHolder. El RecyclerView usa el adapter para saber cómo mostrar los datos en pantalla
