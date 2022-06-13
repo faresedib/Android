@@ -1,0 +1,36 @@
+
+PASOS para traer datos de internet.
+
+1. Dar a la app permiso para acceder a internet con
+        <uses-permission android:name="android.permission.INTERNET"/>
+
+2. Añadir las dependencias de Retrofit
+    -"com.squareup.retrofit2:retrofit:$version_retrofit"
+    -"com.squareup.retrofit2:converter-scalars:$version_retrofit"
+
+3. Creamos un objeto Retrofit con:
+    private val retrofit = Retrofit.Builder()
+       .addConverterFactory(ScalarsConverterFactory.create())
+       .baseUrl(BASE_URL)
+       .build()
+
+    Esto es como hacer la llamada al servicio Rest y traer los datos.
+    Retrofit necesita al menos dos cosas disponibles para construir una API de servicios web:
+    el URI base para el servicio web y una fábrica de convertidores.
+    El convertidor le dice a Retrofit qué hacer con los datos que obtiene del servicio web.
+
+4. Una interfaz que defina cómo Retrofit se comunica con el servidor web mediante solicitudes HTTP.
+
+5. Definir un objeto que inicialice el servicio Retrofit
+
+6. Llamar al servicio web(desde overViewViewModel en esta app)
+
+7. Utilizaremos la biblioteca Moshi es un analizador JSON que convierte una cadena JSON a objeto Kotlin
+
+       -Librería de moshi
+            implementation "com.squareup.moshi:moshi-kotlin:$version_moshi"
+       -Cambiamos el convertidor de retrofit para que utilice el de moshi
+            implementation "com.squareup.retrofit2:converter-moshi:$version_retrofit
+
+8. Necesitaremos un data class para la respuesta JSON
+    -En el caso de esta app crearemos un data class MarsProperty
