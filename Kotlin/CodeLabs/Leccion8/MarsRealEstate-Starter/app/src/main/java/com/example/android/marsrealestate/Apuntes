@@ -34,3 +34,22 @@ PASOS para traer datos de internet.
 
 8. Necesitaremos un data class para la respuesta JSON
     -En el caso de esta app crearemos un data class MarsProperty
+
+9. Introducimos corrutinas en las llamadas a los servicios web
+    -En el caso de esta app se hace en el viewModel con ViewModelScoope.launch
+
+
+PASOS PARA CARGAR IMÁGENES DE INTERNET
+
+1. Importar la librería Glide, implementation "com.github.bumptech.glide:glide:$version_glide".Glide
+   necesita básicamente dos cosas: la url de la imagen un ImageView para cargarla.
+
+2. En esta app en particular utilizaremos adaptadores de enlace (son métodos de extensión que
+   se ubican entre una vista y los datos enlazados para proporcionar
+   un comportamiento personalizado cuando los datos cambian.)
+
+
+AGREGAR MANEJO DE ERRORES
+En esta parte veremos como agregar control de errores cuando una petición esperada está en Loading,
+Success o Failure.
+
