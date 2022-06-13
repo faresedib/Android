@@ -51,5 +51,9 @@ PASOS PARA CARGAR IMÁGENES DE INTERNET
 
 AGREGAR MANEJO DE ERRORES
 En esta parte veremos como agregar control de errores cuando una petición esperada está en Loading,
-Success o Failure.
+Success o Failure. Para ello crearemos un enum class con esos tres estados.
+
+INTERFAZ PARCELABLE
+La Parcelable interfaz permite que los objetos se serialicen, de modo que los datos de los objetos
+se puedan pasar entre fragmentos o actividades.
 
