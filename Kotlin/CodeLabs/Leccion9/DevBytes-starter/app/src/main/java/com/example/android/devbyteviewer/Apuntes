@@ -1,0 +1,44 @@
+
+CAPA DE REPOSITORIO
+
+En esta app nos centraremos en la capa de repositorio de una app, la cual en este caso tiene como
+principal objetivo almacenar datos en caché para cuando haya problemas de conexion, para trabajaremos
+codo con codo con Room para la persistencia de datos ya que este último será la fuente de datos principal
+de la app.
+
+    Conceptos:
+    Objeto de Transferencia de Datos: Se utiliza para analizar el resultado de la red.  Los objetos
+    de transferencia de datos son diferentes de los objetos de dominio porque contienen lógica
+    adicional para analizar los resultados de la red.
+
+Pasos de la app:
+1. Implementar dependencias de Room
+        def room_version = "2.4.2"
+        implementation "androidx.room:room-runtime:$room_version"
+        kapt "androidx.room:room-compiler:$room_version"
+
+2. Agregar objeto de base de datos, trabajando con DatabaseVideo y DatabaseEntities
+    -Crear función que transforma DB objetos en Domain objetos
+    -Crear una función que transforma objetos de red en DB objetos
+
+3. Agregar video DAO creando la interfaz y los métodos pertinentes.
+
+4. Implementar Room Database.
+   -En esta app creamos un abstrac class RoomDatabase
+   -Un lateinit var VideosDatabase
+   -Una función getDatabase.
+
+5. Trabajar con el Repositorio
+    -Creamos la clase VideosRepository
+        -Creamos un método suspend refreshVideos, este método será el encargado de actualizar la caché
+
+6. Recuperamos los datos de la base de datos.
+    -Creamos un objeto LiveData para leer la lista de reproducción
+    -Transformamos los objetos de ese LiveData en domainModel con asDomainModel
+
+7. En la clase DevByteViewModel:
+    -Creamos una instancia del repositorio pasándole por parámetro el singleton
+    -Cambiamos el método de refreshData a refreshDataFromRepository y lo cambiamos en el bloque init
+    -Eliminamos el LiveData playlist
+    -Creamos un nuevo playlist esta vez trayendo los vídeos desde el repo
+
