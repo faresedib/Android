@@ -42,3 +42,58 @@ Pasos de la app:
     -Eliminamos el LiveData playlist
     -Creamos un nuevo playlist esta vez trayendo los vídeos desde el repo
 
+
+WORKMANAGER
+    Es uno de los componentes de la arquitectura de Android y parte de Android Jetpack .
+    WorkManager es para trabajo en segundo plano que es diferible y requiere ejecución garantizada.
+
+    -Aplazable significa que no se requiere que el trabajo se ejecute de inmediato.
+     Por ejemplo, enviar datos analíticos al servidor o sincronizar la base de datos
+     en segundo plano es un trabajo que se puede aplazar.
+
+     -La ejecución garantizada significa que la tarea se ejecutará incluso
+     si se cierra la aplicación o se reinicia el dispositivo.
+
+Para trabajar con WorkManager es necesario familiarizarse con lo siguiente.
+    -Worker
+     Esta clase es donde define el trabajo real (la tarea) para ejecutar en segundo plano.
+     Extienda esta clase y anule el doWork() método. El doWork() método es donde pones el código
+     para que se ejecute en segundo plano, como sincronizar datos con el servidor o procesar imágenes.
+     Usted implementa el Worker en esta tarea.
+
+     -WorkRequest
+      Esta clase representa una solicitud para ejecutar el trabajador en segundo plano.
+      Úselo WorkRequest para configurar cómo y cuándo ejecutar la tarea del trabajador, con la ayuda
+      de Constraints un dispositivo enchufado o conectado a Wi-Fi. Implementa el WorkRequest en
+      una tarea posterior.
+
+      -WorkManager
+       Esta clase programa y ejecuta su WorkRequest. WorkManager programa las solicitudes de trabajo
+       de una manera que distribuye la carga en los recursos del sistema, respetando las restricciones
+       que especifique. Implementa el WorkManager en una tarea posterior.
+
+1. Importamos las dependencias
+    - def work_version = "1.0.1"
+     implementation "android.arch.work:work-runtime-ktx:$work_version"
+
+2. Crear un Worker
+
+    -Implementar doWork()  realiza el trabajo de forma sincrónica y debe devolver
+    un ListenableWorker.Result objeto. Para crear un ListenableWorker.Result objeto, llame a uno
+    de los siguientes métodos estáticos para indicar el estado de finalización del trabajo
+    en segundo plano:
+        - Result.success(): trabajo completado con éxito.
+        - Result.failure(): trabajo terminado con una falla permanente.
+        - Result.retry(): el trabajo encontró una falla transitoria y se debe volver a intentar.
+
+3. Definir un WorkRequest periódico:
+    Hay dos implementaciones concretas de la WorkRequestclase:
+        - La OneTimeWorkRequest clase es para tareas puntuales. (Una tarea única ocurre solo una vez).
+        - La PeriodicWorkRequest clase es para trabajo periódico, trabajo que se repite a intervalos.
+
+    - Configuramos el work recurrente.
+    - Programamos un RequestWork con WorkManager
+
+4. Agregar Restricciones de cuándo ejecutar los Works con RequestWork
+    -Añadimos Constraint con Constraint.Builder
+
