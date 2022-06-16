@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Este archivo enumera todas las fuentes descargables de la app-->
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/lobster</item>
+    </array>
+</resources>

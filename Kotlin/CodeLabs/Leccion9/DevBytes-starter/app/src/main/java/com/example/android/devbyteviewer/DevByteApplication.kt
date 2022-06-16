@@ -19,7 +19,6 @@ package com.example.android.devbyteviewer
 import android.app.Application
 import android.os.Build
 import androidx.work.*
-import com.example.android.devbyteviewer.DevByteApplication.Companion.WORK_NAME
 import com.example.android.devbyteviewer.work.RefreshDataWorker
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
