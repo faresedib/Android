@@ -1,0 +1,85 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3  ~ Copyright 2019, The Android Open Source Project
+4  ~
+5  ~ Licensed under the Apache License, Version 2.0 (the "License");
+6  ~ you may not use this file except in compliance with the License.
+7  ~ You may obtain a copy of the License at
+8  ~
+9  ~      http://www.apache.org/licenses/LICENSE-2.0
+10  ~
+11  ~ Unless required by applicable law or agreed to in writing, software
+12  ~ distributed under the License is distributed on an "AS IS" BASIS,
+13  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+14  ~ See the License for the specific language governing permissions and
+15  ~ limitations under the License.
+16-->
+17<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+18    package="com.example.android.dessertclicker"
+19    android:versionCode="1"
+20    android:versionName="1.0" >
+21
+22    <uses-sdk
+23        android:minSdkVersion="19"
+23-->C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion4\DessertClicker-Starter\app\src\main\AndroidManifest.xml
+24        android:targetSdkVersion="30" />
+24-->C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion4\DessertClicker-Starter\app\src\main\AndroidManifest.xml
+25
+26    <application
+26-->C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion4\DessertClicker-Starter\app\src\main\AndroidManifest.xml:20:5-35:19
+27        android:name="com.example.android.dessertclicker.ClickerApplication"
+27-->C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion4\DessertClicker-Starter\app\src\main\AndroidManifest.xml:21:9-43
+28        android:allowBackup="true"
+28-->C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion4\DessertClicker-Starter\app\src\main\AndroidManifest.xml:22:9-35
+29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+29-->[androidx.core:core:1.7.0] C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion3.2\.gradle\7.4.2\caches\transforms-2\files-2.1\3675bc56c89793dda15e6d8bb0742adf\core-1.7.0\AndroidManifest.xml:24:18-86
+30        android:debuggable="true"
+31        android:icon="@mipmap/ic_dessert_clicker"
+31-->C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion4\DessertClicker-Starter\app\src\main\AndroidManifest.xml:23:9-50
+32        android:label="@string/app_name"
+32-->C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion4\DessertClicker-Starter\app\src\main\AndroidManifest.xml:24:9-41
+33        android:roundIcon="@mipmap/ic_dessert_clicker_round"
+33-->C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion4\DessertClicker-Starter\app\src\main\AndroidManifest.xml:25:9-61
+34        android:supportsRtl="true"
+34-->C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion4\DessertClicker-Starter\app\src\main\AndroidManifest.xml:26:9-35
+35        android:theme="@style/AppTheme" >
+35-->C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion4\DessertClicker-Starter\app\src\main\AndroidManifest.xml:27:9-40
+36        <activity android:name="com.example.android.dessertclicker.MainActivity" >
+36-->C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion4\DessertClicker-Starter\app\src\main\AndroidManifest.xml:28:9-34:20
+36-->C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion4\DessertClicker-Starter\app\src\main\AndroidManifest.xml:28:19-81
+37            <intent-filter>
+37-->C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion4\DessertClicker-Starter\app\src\main\AndroidManifest.xml:29:13-33:29
+38                <action android:name="android.intent.action.MAIN" />
+38-->C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion4\DessertClicker-Starter\app\src\main\AndroidManifest.xml:30:17-69
+38-->C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion4\DessertClicker-Starter\app\src\main\AndroidManifest.xml:30:25-66
+39
+40                <category android:name="android.intent.category.LAUNCHER" />
+40-->C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion4\DessertClicker-Starter\app\src\main\AndroidManifest.xml:32:17-77
+40-->C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion4\DessertClicker-Starter\app\src\main\AndroidManifest.xml:32:27-74
+41            </intent-filter>
+42        </activity>
+43
+44        <provider
+44-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion3.2\.gradle\7.4.2\caches\transforms-2\files-2.1\63125d00fe86c6f9de6223b49a17ba4a\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+45            android:name="androidx.startup.InitializationProvider"
+45-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion3.2\.gradle\7.4.2\caches\transforms-2\files-2.1\63125d00fe86c6f9de6223b49a17ba4a\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+46            android:authorities="com.example.android.dessertclicker.androidx-startup"
+46-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion3.2\.gradle\7.4.2\caches\transforms-2\files-2.1\63125d00fe86c6f9de6223b49a17ba4a\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+47            android:exported="false" >
+47-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion3.2\.gradle\7.4.2\caches\transforms-2\files-2.1\63125d00fe86c6f9de6223b49a17ba4a\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+48            <meta-data
+48-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion3.2\.gradle\7.4.2\caches\transforms-2\files-2.1\63125d00fe86c6f9de6223b49a17ba4a\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+49                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+49-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion3.2\.gradle\7.4.2\caches\transforms-2\files-2.1\63125d00fe86c6f9de6223b49a17ba4a\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+50                android:value="androidx.startup" />
+50-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion3.2\.gradle\7.4.2\caches\transforms-2\files-2.1\63125d00fe86c6f9de6223b49a17ba4a\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+51            <meta-data
+51-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion3.2\.gradle\7.4.2\caches\transforms-2\files-2.1\9800fb8f08f666c0096dc817966c129f\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+52                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+52-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion3.2\.gradle\7.4.2\caches\transforms-2\files-2.1\9800fb8f08f666c0096dc817966c129f\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+53                android:value="androidx.startup" />
+53-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Fares\Documents\Programacion\Android\Kotlin\CodeLabs\Leccion3.2\.gradle\7.4.2\caches\transforms-2\files-2.1\9800fb8f08f666c0096dc817966c129f\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+54        </provider>
+55    </application>
+56
+57</manifest>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "462580062263",
+    "project_id": "dreamcake-1e609",
+    "storage_bucket": "dreamcake-1e609.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462580062263:android:c1e62b34bbcc095a0c47b2",
+        "android_client_info": {
+          "package_name": "com.example.dreamcake"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "462580062263-u651u6eitf9h599rps3911atr830vlrl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs4fPXsQieG-SnRdIeUA38QNsZkSxDaeA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462580062263-u651u6eitf9h599rps3911atr830vlrl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
