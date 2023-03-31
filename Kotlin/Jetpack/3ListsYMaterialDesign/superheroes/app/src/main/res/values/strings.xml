@@ -23,4 +23,6 @@
         y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker,
         el cual incluye versiones de Lorem Ipsum.
     </string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="title_activity_splash">SplashActivity</string>
 </resources>
